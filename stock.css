@@ -1,0 +1,718 @@
+﻿/* =========================================================
+   STOCK.CSS - page-specific styles only.
+   Sidebar / topbar / content shell lives in layout.css.
+   ========================================================= */
+
+/* =========================
+   STOCK HEADER
+========================= */
+
+.stock-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 24px;
+}
+
+.stock-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+
+  color: #1e2d3d;
+
+  margin-bottom: 6px;
+}
+
+.stock-header p {
+  font-size: 15px;
+
+  color: #687586;
+}
+
+/* =========================
+   ADD STOCK BUTTON
+========================= */
+
+.add-stock-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  min-width: 64px;
+  height: 40px;
+
+  padding: 0 14px;
+
+  background: #22c55e;
+  color: white;
+
+  border: 1px solid #16a34a;
+  border-radius: 7px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 6px rgba(22, 163, 74, 0.25);
+
+  transition: all 0.2s ease;
+}
+
+.add-stock-btn:hover {
+  background: #16a34a;
+  border-color: #15803d;
+
+  box-shadow: 0 4px 10px rgba(22, 163, 74, 0.35);
+
+  transform: translateY(-1px);
+}
+
+.add-stock-btn:active {
+  transform: translateY(0) scale(0.96);
+
+  box-shadow: none;
+}
+
+/* =========================
+   STOCK CONTROLS
+========================= */
+
+.stock-controls {
+  width: 100%;
+
+  background: white;
+
+  padding: 20px;
+
+  border: 1px solid #d7dde5;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 22px;
+}
+
+/* =========================
+   SEARCH BOX
+========================= */
+
+.search-box {
+  position: relative;
+
+  flex: 1;
+}
+
+.search-box i {
+  position: absolute;
+
+  left: 16px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #7a8794;
+
+  font-size: 15px;
+}
+
+.search-box input {
+  width: 100%;
+  height: 48px;
+
+  padding: 0 16px 0 43px;
+
+  border: 1px solid #d5dce5;
+  border-radius: 7px;
+
+  outline: none;
+
+  font-size: 14px;
+
+  color: #334155;
+
+  transition: 0.2s ease;
+}
+
+.search-box input:focus {
+  border-color: #2864a8;
+}
+
+/* =========================
+   FILTER SELECT
+========================= */
+
+.stock-controls select {
+  width: 160px;
+  height: 48px;
+
+  padding: 0 15px;
+
+  border: 1px solid #d5dce5;
+  border-radius: 7px;
+
+  background: white;
+
+  color: #435364;
+
+  font-size: 14px;
+
+  outline: none;
+
+  cursor: pointer;
+}
+
+/* =========================
+   TABLE CONTAINER
+========================= */
+
+.table-container {
+  width: 100%;
+
+  background: white;
+
+  border: 1px solid #d7dde5;
+  border-radius: 10px;
+
+  overflow-x: auto;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+/* =========================
+   TABLE
+========================= */
+
+table {
+  width: 100%;
+
+  min-width: 1100px;
+
+  border-collapse: collapse;
+}
+
+thead {
+  background: #f8fafc;
+}
+
+th {
+  text-align: left;
+
+  padding: 16px 20px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #334155;
+
+  border-bottom: 1px solid #dce1e7;
+
+  white-space: nowrap;
+}
+
+td {
+  padding: 16px 20px;
+
+  font-size: 14px;
+
+  color: #52606d;
+
+  border-bottom: 1px solid #edf0f3;
+
+  white-space: nowrap;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: #f8fbff;
+}
+
+/* =========================
+   ITEM NAME
+========================= */
+
+.item-name {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  font-weight: 500;
+
+  color: #1e2d3d;
+}
+
+.item-name i {
+  color: #2864a8;
+}
+
+/* =========================
+   STOCK STATUS
+========================= */
+
+.status {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 15px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.in-stock {
+  background: #e7f7ee;
+  color: #1c8b4c;
+}
+
+.low-stock {
+  background: #fff5d9;
+  color: #b77900;
+}
+
+.out-stock {
+  background: #fde8e8;
+  color: #d13b3b;
+}
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.action-btn {
+    min-width: 64px;
+    height: 40px;
+
+    padding: 0 14px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    border: 1px solid #16a34a;
+    background: #22c55e;
+    color: white;
+
+    box-shadow: 0 2px 6px rgba(22, 163, 74, 0.25);
+
+    transition: all 0.2s ease;
+}
+
+.action-btn .btn-icon {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.action-btn:hover {
+    background: #16a34a;
+    border-color: #15803d;
+
+    box-shadow: 0 4px 10px rgba(22, 163, 74, 0.35);
+    transform: translateY(-1px);
+}
+
+.action-btn:active {
+    transform: translateY(0) scale(0.96);
+
+    box-shadow: none;
+}
+
+/* =========================
+   DELETE BUTTON - RED
+========================= */
+
+.action-btn.delete-btn {
+    background: #ef4444;
+    border-color: #dc2626;
+    color: white;
+
+    box-shadow: 0 2px 6px rgba(220, 38, 38, 0.25);
+}
+
+.action-btn.delete-btn:hover {
+    background: #dc2626;
+    border-color: #b91c1c;
+
+    box-shadow: 0 4px 10px rgba(220, 38, 38, 0.35);
+}
+
+.action-btn.delete-btn:active {
+    transform: translateY(0) scale(0.96);
+
+    box-shadow: none;
+}
+/* =========================
+   ADD STOCK MODAL
+========================= */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 500px;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  padding: 25px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+  animation: modalPopup 0.25s ease;
+}
+
+@keyframes modalPopup {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================
+   MODAL HEADER
+========================= */
+
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  padding-bottom: 15px;
+}
+
+.modal-header h2 {
+  font-size: 24px;
+  color: #17233c;
+
+  margin-bottom: 5px;
+}
+
+.modal-header p {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.close-btn {
+  border: none;
+  background: transparent;
+
+  font-size: 30px;
+
+  cursor: pointer;
+
+  color: #6b7280;
+
+  transition: 0.2s;
+}
+
+.close-btn:hover {
+  color: #ef4444;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+
+  margin-bottom: 8px;
+
+  color: #374151;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #2563eb;
+
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* =========================
+   MODAL BUTTONS
+========================= */
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  margin-top: 25px;
+}
+
+.cancel-modal-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  min-width: 64px;
+  height: 40px;
+
+  padding: 0 14px;
+
+  border: 1px solid #d1d5db;
+
+  background: #ffffff;
+
+  color: #374151;
+
+  border-radius: 7px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition: all 0.2s ease;
+}
+
+.cancel-modal-btn:hover {
+  background: #f3f4f6;
+}
+
+.cancel-modal-btn:active {
+  transform: translateY(0) scale(0.96);
+  box-shadow: none;
+}
+
+.save-stock-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  min-width: 64px;
+  height: 40px;
+
+  padding: 0 14px;
+
+  border: 1px solid #16a34a;
+
+  background: #22c55e;
+
+  color: white;
+
+  border-radius: 7px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  box-shadow: 0 2px 6px rgba(22, 163, 74, 0.25);
+
+  transition: all 0.2s ease;
+}
+
+.save-stock-btn:hover {
+  background: #16a34a;
+  border-color: #15803d;
+
+  box-shadow: 0 4px 10px rgba(22, 163, 74, 0.35);
+
+  transform: translateY(-1px);
+}
+
+.save-stock-btn:active {
+  transform: translateY(0) scale(0.96);
+  box-shadow: none;
+}
+
+/* =========================
+   ADD STOCK BUTTON
+========================= */
+
+.add-stock-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  min-width: 64px;
+  height: 40px;
+
+  padding: 0 14px;
+
+  background: #22c55e;
+
+  color: white;
+
+  border: 1px solid #16a34a;
+
+  border-radius: 7px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  box-shadow: 0 2px 6px rgba(22, 163, 74, 0.25);
+
+  transition: all 0.2s ease;
+}
+
+.add-stock-btn:hover {
+  background: #16a34a;
+  border-color: #15803d;
+
+  box-shadow: 0 4px 10px rgba(22, 163, 74, 0.35);
+
+  transform: translateY(-1px);
+}
+
+.add-stock-btn:active {
+  transform: translateY(0) scale(0.96);
+  box-shadow: none;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .modal-content {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .modal-actions button {
+    width: 100%;
+  }
+}
+.delete-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 64px;
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 7px;
+  border: 1px solid #dc2626;
+  background: #ef4444;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(220, 38, 38, 0.25);
+  transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+  border-color: #b91c1c;
+  box-shadow: 0 4px 10px rgba(220, 38, 38, 0.35);
+  transform: translateY(-1px);
+}
+
+.delete-btn:active {
+  transform: translateY(0) scale(0.96);
+  box-shadow: none;
+}
+
+/* =========================
+   HIDE SCROLLBARS
+========================= */
+
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}

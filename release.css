@@ -1,0 +1,757 @@
+﻿/* =========================================================
+   RELEASE.CSS - page-specific styles only.
+   Sidebar / topbar / content shell lives in layout.css.
+   ========================================================= */
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  margin-bottom: 20px;
+}
+
+.search-box span {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 17px;
+  z-index: 1;
+}
+
+.search-box input {
+  width: 100%;
+  height: 45px;
+  padding: 0 15px 0 42px;
+  border: 1px solid #d9dee7;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  background: white;
+  color: #17233c;
+}
+
+.search-box input:focus {
+  border-color: #1769d1;
+  box-shadow: 0 0 0 3px rgba(23, 105, 209, 0.1);
+}
+
+.search-box input::placeholder {
+  color: #9aa4b2;
+}
+
+/* =========================
+   SEARCH RESULTS
+========================= */
+
+.search-results {
+  display: none;
+  position: absolute;
+  width: 100%;
+  max-width: 450px;
+  background: #ffffff;
+  border: 1px solid #d9dee7;
+  border-radius: 8px;
+  margin-top: -15px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  z-index: 100;
+}
+
+.search-result-item {
+  padding: 12px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #eeeeee;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-item:hover {
+  background: #f5f7fb;
+}
+
+.search-result-item strong {
+  font-size: 14px;
+  color: #17233c;
+}
+
+.search-result-item span {
+  font-size: 12px;
+  color: #777;
+}
+
+.no-result {
+  padding: 15px;
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+}
+
+/* =========================
+   STOCK TABLE BOX
+========================= */
+
+.stock-box {
+    background: #ffffff;
+    border: 1px solid #e4e8ed;
+    border-radius: 8px;
+    padding: 25px;
+    width: 100%;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+
+/* =========================
+   TABLE CONTAINER
+========================= */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+
+/* =========================
+   STOCK TABLE
+========================= */
+
+#stockTable {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #ffffff;
+    table-layout: auto;
+}
+
+
+/* =========================
+   TABLE HEADER
+========================= */
+
+#stockTable thead {
+    background: #f7f9fc;
+}
+
+#stockTable th {
+    padding: 15px 16px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 600;
+    color: #17233c;
+    border-bottom: 1px solid #e4e8ed;
+    white-space: nowrap;
+}
+
+
+/* =========================
+   TABLE BODY
+========================= */
+
+#stockTable td {
+    padding: 15px 16px;
+    font-size: 13px;
+    color: #4b5870;
+    border-bottom: 1px solid #edf0f4;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+
+/* =========================
+   COLUMN WIDTHS
+========================= */
+
+#stockTable th:nth-child(1),
+#stockTable td:nth-child(1) {
+    width: 12%;
+}
+
+#stockTable th:nth-child(2),
+#stockTable td:nth-child(2) {
+    width: 22%;
+}
+
+#stockTable th:nth-child(3),
+#stockTable td:nth-child(3) {
+    width: 18%;
+}
+
+#stockTable th:nth-child(4),
+#stockTable td:nth-child(4) {
+    width: 16%;
+    text-align: center;
+}
+
+#stockTable th:nth-child(5),
+#stockTable td:nth-child(5) {
+    width: 16%;
+    text-align: center;
+}
+
+#stockTable th:nth-child(6),
+#stockTable td:nth-child(6) {
+    width: 20%;
+}
+
+
+/* =========================
+   ROW HOVER
+========================= */
+
+#stockTable tbody tr:hover {
+    background: #f8fafc;
+}
+
+
+/* =========================
+   LAST ROW
+========================= */
+
+#stockTable tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================
+   EMPTY TABLE MESSAGE
+========================= */
+
+#stockTable td[colspan] {
+    text-align: center !important;
+    padding: 30px 16px;
+    color: #637086;
+}
+
+
+/* =========================
+   STATUS BADGES
+========================= */
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 11px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.status-badge.in-stock {
+    background: #e5f7eb;
+    color: #159447;
+}
+
+.status-badge.low-stock {
+    background: #fff0df;
+    color: #f17c00;
+}
+
+.status-badge.out-of-stock {
+    background: #fde8e8;
+    color: #d92d2d;
+}
+
+
+/* =========================
+   RELEASE FORM BOX
+========================= */
+
+.release-form-box {
+    background: white;
+    border: 1px solid #e4e8ed;
+    border-radius: 8px;
+    padding: 25px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.release-form-box h2 {
+    margin: 0 0 5px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #17233c;
+}
+
+.release-form-box .subtitle {
+    margin: 0 0 20px;
+    color: #637086;
+    font-size: 14px;
+}
+/* =========================
+   STATUS BADGES
+========================= */
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 11px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.status-badge.in-stock {
+  background: #e5f7eb;
+  color: #159447;
+}
+
+.status-badge.low-stock {
+  background: #fff0df;
+  color: #f17c00;
+}
+
+.status-badge.out-of-stock {
+  background: #fde8e8;
+  color: #d92d2d;
+}
+
+/* =========================
+   TABLE ACTIONS
+========================= */
+
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 64px;
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 7px;
+  border: 1px solid #16a34a;
+  background: #22c55e;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(22, 163, 74, 0.25);
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+  background: #16a34a;
+  border-color: #15803d;
+  box-shadow: 0 4px 10px rgba(22, 163, 74, 0.35);
+  transform: translateY(-1px);
+}
+
+.delete-btn {
+  border: 1px solid #dc2626;
+  background: #ef4444;
+  box-shadow: 0 2px 6px rgba(220, 38, 38, 0.25);
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+  border-color: #b91c1c;
+  box-shadow: 0 4px 10px rgba(220, 38, 38, 0.35);
+}
+
+/* =========================
+   RELEASE FORM
+========================= */
+
+body > h2 {
+  margin-left: 260px;
+  margin-right: 30px;
+  margin-top: 40px; /* ADDED SPACE BETWEEN TABLE AND FORM */
+  font-size: 22px;
+  font-weight: 600;
+  color: #17233c;
+}
+
+body > .subtitle {
+  display: block;
+  margin-left: 260px;
+  margin-right: 30px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  color: #637086;
+  font-size: 14px;
+}
+
+body > form {
+  margin-left: 260px;
+  margin-right: 30px;
+  margin-top: 0;
+  margin-bottom: 30px;
+  background: white;
+  border: 1px solid #e4e8ed;
+  border-radius: 8px;
+  padding: 25px;
+}
+/* =========================
+   FORM GRID
+========================= */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #17233c;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  height: 43px;
+  border: 1px solid #d9dfe7;
+  border-radius: 6px;
+  padding: 0 14px;
+  font-size: 14px;
+  outline: none;
+  color: #17233c;
+  background: white;
+}
+
+.form-group input::placeholder {
+  color: #9aa4b2;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #1769d1;
+  box-shadow: 0 0 0 2px rgba(23, 105, 209, 0.1);
+}
+
+/* =========================
+   BUTTON AREA
+========================= */
+
+.button-area {
+  margin-top: 25px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 64px;
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 7px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancel-btn {
+  background: white;
+  color: #374151;
+}
+
+.cancel-btn:hover {
+  background: #f3f4f6;
+}
+
+.cancel-btn:active {
+  transform: translateY(0) scale(0.96);
+  box-shadow: none;
+}
+
+.release-btn {
+  background: #22c55e;
+  border-color: #16a34a;
+  color: white;
+  box-shadow: 0 2px 6px rgba(22, 163, 74, 0.25);
+}
+
+.release-btn:hover {
+  background: #16a34a;
+  border-color: #15803d;
+  box-shadow: 0 4px 10px rgba(22, 163, 74, 0.35);
+  transform: translateY(-1px);
+}
+
+.release-btn:active {
+  transform: translateY(0) scale(0.96);
+  box-shadow: none;
+}
+
+/* =========================
+   RELEASE ITEM BUTTON
+========================= */
+
+.release-item-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 64px;
+  height: 40px;
+  padding: 0 14px;
+  background: #22c55e;
+  color: white;
+  border: 1px solid #16a34a;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(22, 163, 74, 0.25);
+  transition: all 0.2s ease;
+}
+
+.release-item-btn:hover {
+  background: #16a34a;
+  border-color: #15803d;
+  box-shadow: 0 4px 10px rgba(22, 163, 74, 0.35);
+  transform: translateY(-1px);
+}
+
+.release-item-btn:active {
+  transform: translateY(0) scale(0.96);
+  box-shadow: none;
+}
+
+/* =========================
+   MODAL BACKGROUND
+========================= */
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 30, 50, 0.45);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal.show {
+  display: flex;
+}
+
+/* =========================
+   MODAL CONTENT
+========================= */
+
+.modal-content {
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: modalAnimation 0.25s ease;
+}
+
+@keyframes modalAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   MODAL HEADER
+========================= */
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 25px;
+  border-bottom: 1px solid #e4e8ed;
+}
+
+.modal-header h2 {
+  font-size: 22px;
+  color: #17233c;
+  margin-bottom: 5px;
+}
+
+.modal-header p {
+  font-size: 14px;
+  color: #68758a;
+}
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.close-btn {
+  width: 38px;
+  height: 38px;
+  border: none;
+  background: #f3f5f7;
+  color: #68758a;
+  border-radius: 6px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background: #e8ecf1;
+  color: #17233c;
+}
+
+/* =========================
+   MODAL FORM
+========================= */
+
+.modal form {
+  padding: 25px;
+}
+
+.modal .form-group {
+  margin-bottom: 18px;
+}
+
+/* =========================
+   MODAL ACTIONS
+========================= */
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #e4e8ed;
+}
+
+/* =========================
+   SUBMIT RELEASE BUTTON
+========================= */
+
+.submit-release-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 64px;
+  height: 40px;
+  padding: 0 14px;
+  background: #22c55e;
+  border: 1px solid #16a34a;
+  border-radius: 7px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(22, 163, 74, 0.25);
+  transition: all 0.2s ease;
+}
+
+.submit-release-btn:hover {
+  background: #16a34a;
+  border-color: #15803d;
+  box-shadow: 0 4px 10px rgba(22, 163, 74, 0.35);
+  transform: translateY(-1px);
+}
+
+.submit-release-btn:active {
+  transform: translateY(0) scale(0.96);
+  box-shadow: none;
+}
+@media (max-width: 900px) {
+  body > h2,
+  body > .subtitle,
+  body > form {
+    margin-left: 100px;
+  }
+}
+
+@media (max-width: 700px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body > h2,
+  body > .subtitle,
+  body > form {
+    margin-left: 90px;
+    margin-right: 20px;
+  }
+
+  body > h2 {
+    margin-top: 20px;
+  }
+
+  body > .subtitle {
+    margin-top: 6px;
+    margin-bottom: 15px;
+  }
+
+  body > form {
+    padding: 20px;
+    margin-top: 0;
+  }
+
+  .button-area {
+    flex-direction: column;
+  }
+
+  .button-area .btn {
+    width: 100%;
+  }
+}
+#stockTableBody tr {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#stockTableBody tr:hover {
+    background-color: #f1f5f9;
+}
+
+#stockTableBody tr.selected-row {
+    background-color: #dbeafe;
+    box-shadow: inset 4px 0 0 #2563eb;
+}
+
+/* =========================
+   HIDE SCROLLBARS
+========================= */
+
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}

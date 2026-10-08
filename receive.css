@@ -1,0 +1,337 @@
+/* =========================================================
+   RECEIVE.CSS — page-specific styles only.
+   Sidebar / topbar / content shell lives in layout.css.
+   ========================================================= */
+
+/* =========================================================
+   REQUEST HEADER
+   ========================================================= */
+
+.request-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+}
+
+.request-header h2 {
+    font-size: 24px;
+
+    color: #1e2d3d;
+
+    margin-bottom: 6px;
+}
+
+.request-header p {
+    font-size: 15px;
+
+    color: #687586;
+}
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.request-controls {
+    background: white;
+
+    padding: 20px;
+
+    border: 1px solid #d7dde5;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-bottom: 22px;
+}
+
+.search-box {
+    position: relative;
+
+    flex: 1;
+}
+
+.search-box i {
+    position: absolute;
+
+    left: 15px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #7a8794;
+}
+
+.search-box input {
+    width: 100%;
+
+    height: 52px;
+
+    padding: 0 15px 0 42px;
+
+    border: 1px solid #d5dce5;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+.search-box input:focus {
+    border-color: #2864a8;
+}
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.table-container {
+    background: white;
+
+    border: 1px solid #d7dde5;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+table {
+    width: 100%;
+
+    min-width: 1100px;
+
+    border-collapse: collapse;
+}
+
+thead {
+    background: #f5f7fa;
+}
+
+th {
+    text-align: left;
+
+    padding: 16px 20px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #334155;
+
+    border-bottom: 1px solid #dce1e7;
+}
+
+td {
+    padding: 16px 20px;
+
+    font-size: 14px;
+
+    color: #52606d;
+
+    border-bottom: 1px solid #dce1e7;
+
+    white-space: nowrap;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background: #f8fbff;
+}
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 64px;
+    height: 40px;
+    padding: 0 14px;
+    border-radius: 7px;
+    border: 1px solid #16a34a;
+    background: #22c55e;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(22, 163, 74, 0.25);
+    transition: all 0.2s ease;
+}
+
+/* =========================================================
+   ADD BUTTON - GREEN
+   ========================================================= */
+
+.action-btn.add-btn {
+    border-color: #16a34a;
+    background: #22c55e;
+    color: white;
+}
+
+.action-btn.add-btn:hover {
+    background: #16a34a;
+    border-color: #15803d;
+    box-shadow: 0 4px 10px rgba(22, 163, 74, 0.35);
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   DELETE BUTTON - RED
+   ========================================================= */
+
+.action-btn.delete-btn {
+    border-color: #dc2626;
+    background: #ef4444;
+    color: white;
+    box-shadow: 0 2px 6px rgba(220, 38, 38, 0.25);
+}
+
+.action-btn.delete-btn:hover {
+    background: #dc2626;
+    border-color: #b91c1c;
+    box-shadow: 0 4px 10px rgba(220, 38, 38, 0.35);
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   RELEASE BUTTON - GREEN
+   ========================================================= */
+
+.release-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 64px;
+    height: 40px;
+    padding: 0 14px;
+    border-radius: 7px;
+    border: 1px solid #16a34a;
+    background: #22c55e;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(22, 163, 74, 0.25);
+    transition: all 0.2s ease;
+}
+
+.release-btn:hover {
+    background: #16a34a;
+    border-color: #15803d;
+    box-shadow: 0 4px 10px rgba(22, 163, 74, 0.35);
+    transform: translateY(-1px);
+}
+
+.release-btn:active {
+    transform: translateY(0) scale(0.96);
+    box-shadow: none;
+}
+
+/* =========================================================
+   CANCEL BUTTON - RED
+   ========================================================= */
+
+.cancel-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 64px;
+    height: 40px;
+    padding: 0 14px;
+    border-radius: 7px;
+    border: 1px solid #dc2626;
+    background: #ef4444;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(220, 38, 38, 0.25);
+    transition: all 0.2s ease;
+}
+
+.cancel-btn:hover {
+    background: #dc2626;
+    border-color: #b91c1c;
+    box-shadow: 0 4px 10px rgba(220, 38, 38, 0.35);
+    transform: translateY(-1px);
+}
+
+.cancel-btn:active {
+    transform: translateY(0) scale(0.96);
+    box-shadow: none;
+}
+
+/* =========================================================
+   STATUS CHIP
+   ========================================================= */
+
+.status-chip {
+    display: inline-block;
+
+    padding: 6px 14px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.status-pending {
+    color: #f07800;
+    background: #fff2df;
+}
+
+.status-released {
+    color: #138a42;
+    background: #e7f7ed;
+}
+
+.status-cancelled {
+    color: #e52d2d;
+    background: #ffe8e8;
+}
+
+/* =========================================================
+   BUTTON CLICK EFFECT
+   ========================================================= */
+
+.action-btn:active {
+    transform: translateY(0) scale(0.96);
+    box-shadow: none;
+}
+
+/* =========================================================
+   RESPONSIVE (page-specific only)
+   ========================================================= */
+
+@media screen and (max-width: 900px) {
+
+    .request-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .request-controls {
+        flex-direction: column;
+    }
+}

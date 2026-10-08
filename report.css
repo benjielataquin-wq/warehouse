@@ -1,0 +1,413 @@
+/* =========================================================
+   REPORT.CSS
+   Page-specific styles for report.php.
+   The shared shell (sidebar, topbar, layout) lives in
+   layout.css, which is loaded AFTER this file.
+   ========================================================= */
+
+/* =========================================================
+   REPORT HEADER
+   ========================================================= */
+
+.report-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 24px;
+}
+
+.report-header h2 {
+    font-size: 24px;
+    font-weight: 600;
+
+    color: #1e2d3d;
+
+    margin-bottom: 6px;
+}
+
+.report-header p {
+    font-size: 15px;
+
+    color: #687586;
+}
+
+/* =========================================================
+   PRINT BUTTON
+   ========================================================= */
+
+.print-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 40px;
+
+    padding: 0 16px;
+
+    background: #1769d1;
+    color: white;
+
+    border: 1px solid #1257ab;
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    box-shadow: 0 2px 6px rgba(23, 105, 209, 0.25);
+
+    transition: all 0.2s ease;
+}
+
+.print-btn:hover {
+    background: #1257ab;
+    border-color: #104c96;
+
+    box-shadow: 0 4px 10px rgba(23, 105, 209, 0.35);
+
+    transform: translateY(-1px);
+}
+
+.print-btn:active {
+    transform: translateY(0) scale(0.97);
+
+    box-shadow: none;
+}
+
+/* =========================================================
+   SUMMARY CARDS
+   Same card design as the dashboard (home.css).
+   ========================================================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.card {
+    position: relative;
+
+    background: white;
+
+    border: 1px solid #e4e8ed;
+    border-radius: 10px;
+
+    padding: 25px;
+    min-height: 145px;
+
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+
+    overflow: hidden;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.card h4 {
+    font-size: 14px;
+    font-weight: 500;
+
+    color: #17233c;
+
+    margin-bottom: 13px;
+}
+
+.card .number {
+    font-size: 30px;
+    font-weight: bold;
+
+    color: #17233c;
+
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+
+    color: #637086;
+}
+
+.card-icon {
+    position: absolute;
+    right: 23px;
+    top: 30px;
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.card-icon.blue {
+    background: #e8f1ff;
+    color: #1769d1;
+}
+
+.card-icon.green {
+    background: #e5f7eb;
+    color: #159447;
+}
+
+.card-icon.purple {
+    background: #f0eafd;
+    color: #6935d4;
+}
+
+.card-icon.orange {
+    background: #fff0df;
+    color: #f17c00;
+}
+
+.card-icon.red {
+    background: #fde8e8;
+    color: #d92d2d;
+}
+
+/* =========================================================
+   TABLE CONTAINER
+   ========================================================= */
+
+.table-container {
+    width: 100%;
+
+    background: white;
+
+    border: 1px solid #d7dde5;
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+table {
+    width: 100%;
+    min-width: 750px;
+
+    border-collapse: collapse;
+}
+
+thead {
+    background: #f5f7fa;
+}
+
+th {
+    text-align: left;
+
+    padding: 16px 20px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #334155;
+
+    border-bottom: 1px solid #dce1e7;
+
+    white-space: nowrap;
+}
+
+td {
+    padding: 16px 20px;
+
+    font-size: 14px;
+
+    color: #52606d;
+
+    border-bottom: 1px solid #dce1e7;
+
+    white-space: nowrap;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background: #f8fbff;
+}
+
+/* =========================================================
+   STATUS BADGES
+   ========================================================= */
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px 11px;
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.status-badge.in-stock {
+    background: #e5f7eb;
+    color: #159447;
+}
+
+.status-badge.low-stock {
+    background: #fff0df;
+    color: #f17c00;
+}
+
+.status-badge.out-of-stock {
+    background: #fde8e8;
+    color: #d92d2d;
+}
+
+/* =========================================================
+   NO RECORDS
+   ========================================================= */
+
+.no-records {
+    text-align: center;
+
+    padding: 30px 16px;
+
+    color: #687586;
+}
+
+/* =========================================================
+   TRANSPORT PER MONTH
+   ========================================================= */
+
+.transport-report {
+    margin-top: 28px;
+}
+
+.transport-report .report-header h2 {
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.transport-report .count-col {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.transport-report .count-delivery {
+    color: #1769d1;
+    font-weight: 600;
+}
+
+.transport-report .count-pickup {
+    color: #159447;
+    font-weight: 600;
+}
+
+/* =========================================================
+   PRINT
+   Higher specificity than layout.css so the shell rules
+   (loaded after this file) do not win.
+   ========================================================= */
+
+@media print {
+
+    body .sidebar,
+    body .topbar,
+    body .print-btn {
+        display: none;
+    }
+
+    body .layout .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    html body {
+        background: white;
+    }
+
+    .card,
+    .table-container {
+        border: 1px solid #ccc;
+        box-shadow: none;
+    }
+
+    .report-header,
+    .cards,
+    .table-container,
+    .transport-report {
+        break-inside: avoid;
+    }
+
+    .card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    thead {
+        background: white;
+    }
+
+    th {
+        color: black;
+
+        border-top: 1px solid #999;
+        border-bottom: 1px solid #999;
+    }
+
+    td {
+        border-bottom: 1px solid #ccc;
+    }
+
+    tbody tr:hover {
+        background: transparent;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .report-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card {
+        min-height: 0;
+    }
+}

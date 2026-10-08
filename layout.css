@@ -1,0 +1,463 @@
+/* =========================================================
+   LAYOUT.CSS
+   Single source of truth for the app shell (sidebar,
+   topbar, page content). Loaded LAST on every page so that
+   page CSS can never shift the shared layout between pages.
+   ========================================================= */
+
+/* =========================================================
+   TOKENS
+   ========================================================= */
+
+:root {
+    --sidebar-width: 230px;
+    --sidebar-collapsed: 70px;
+    --topbar-height: 88px;
+    --content-padding-y: 27px;
+    --content-padding-x: 30px;
+
+    --sidebar-bg: #14263d;
+    --sidebar-text: #e4e9f0;
+    --sidebar-hover: #203a59;
+    --accent: #1769d1;
+    --page-bg: #f5f7fa;
+    --text: #17233c;
+    --muted: #68758a;
+    --line: #e4e8ed;
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Reserve the scrollbar gutter so a page that scrolls and a
+   page that does not measure identically. */
+html {
+    scrollbar-gutter: stable;
+}
+
+body {
+    background: var(--page-bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* =========================================================
+   LAYOUT WRAPPER
+   ========================================================= */
+
+.layout {
+    display: block;
+    min-height: 100vh;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: var(--sidebar-bg);
+    color: #fff;
+    padding-top: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.logo {
+    height: 70px;
+    flex-shrink: 0;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    background: #fff;
+    color: var(--sidebar-bg);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.logo-text {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.logo-text span {
+    display: block;
+}
+
+/* ---- MENU ---- */
+
+.menu {
+    padding: 20px 12px;
+    flex-shrink: 0;
+}
+
+.menu a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 13px 15px;
+    margin-bottom: 7px;
+    color: var(--sidebar-text);
+    text-decoration: none;
+    border-radius: 7px;
+    font-size: 15px;
+    width: 100%;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.2s;
+}
+
+.menu a:hover {
+    background: var(--sidebar-hover);
+}
+
+.menu a:active {
+    transform: none;
+}
+
+.menu a.active {
+    background: var(--accent);
+    color: #fff;
+}
+
+.icon {
+    width: 20px;
+    flex-shrink: 0;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* ---- LOGOUT ---- */
+
+.logout {
+    margin-top: auto;
+    padding: 15px 12px 20px;
+    flex-shrink: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logout a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    color: #d9b3ff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 9px;
+    background: rgba(182, 92, 255, 0.12);
+    border: 1px solid rgba(182, 92, 255, 0.28);
+    transition: 0.2s ease;
+}
+
+.logout a:hover {
+    background: rgba(182, 92, 255, 0.25);
+    border-color: rgba(182, 92, 255, 0.5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.logout a:active {
+    box-shadow: none;
+}
+
+.logout .icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    background: rgba(182, 92, 255, 0.18);
+    border: 1px solid rgba(182, 92, 255, 0.35);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.main,
+.main-content {
+    margin-left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+    min-height: 100vh;
+    background: var(--page-bg);
+}
+
+/* =========================================================
+   SIDEBAR TOGGLE
+   ========================================================= */
+
+.sidebar,
+.main,
+.main-content {
+    transition: margin-left 0.25s ease, width 0.25s ease;
+}
+
+body.sidebar-hidden .sidebar {
+    margin-left: calc(-1 * var(--sidebar-width));
+}
+
+body.sidebar-hidden .main,
+body.sidebar-hidden .main-content {
+    margin-left: 0;
+    width: 100%;
+}
+
+/* =========================================================
+   TOPBAR
+   ========================================================= */
+
+.topbar {
+    height: var(--topbar-height);
+    flex-shrink: 0;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--content-padding-x);
+    border-bottom: 1px solid var(--line);
+}
+
+.page-title {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    min-width: 0;
+}
+
+.page-title h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    padding: 0;
+    flex-shrink: 0;
+    font-size: 28px;
+    color: var(--text);
+    cursor: pointer;
+}
+
+/* ---- TOPBAR RIGHT ---- */
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
+    flex-shrink: 0;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* ---- NOTIFICATION ---- */
+
+.notification {
+    position: relative;
+    display: inline-block;
+    font-size: 25px;
+    margin-right: 20px;
+    color: var(--text);
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.notification .notification-count {
+    position: absolute;
+    top: -7px;
+    right: -8px;
+    width: 19px;
+    height: 19px;
+    background: #e52b2b;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ---- USER PROFILE ---- */
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.profile-image {
+    width: 43px;
+    height: 43px;
+    flex-shrink: 0;
+    background: #e8ecf1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: var(--text);
+}
+
+.user-info {
+    display: block;
+    line-height: 1.35;
+}
+
+.user-info strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.user-info span {
+    display: block;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.content {
+    width: 100%;
+    padding: var(--content-padding-y) var(--content-padding-x);
+}
+
+/* =========================================================
+   RESPONSIVE — single breakpoint shared by every page
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: var(--sidebar-collapsed);
+    }
+
+    body.sidebar-hidden .sidebar {
+        margin-left: calc(-1 * var(--sidebar-collapsed));
+    }
+
+    .logo {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .logo-text {
+        display: none;
+    }
+
+    .menu a {
+        justify-content: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* hide the text label, keep the icon */
+    .menu a > span:not(.icon),
+    .logout span:not(.icon) {
+        display: none;
+    }
+
+    .logout {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .logout a {
+        justify-content: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .main,
+    .main-content {
+        margin-left: var(--sidebar-collapsed);
+        width: calc(100% - var(--sidebar-collapsed));
+    }
+
+    body.sidebar-hidden .main,
+    body.sidebar-hidden .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .topbar {
+        padding: 0 20px;
+    }
+
+    .page-title {
+        gap: 15px;
+    }
+
+    .page-title h1 {
+        font-size: 22px;
+    }
+
+    .notification {
+        margin-right: 10px;
+    }
+
+    .user-info {
+        display: none;
+    }
+
+    .content {
+        padding: 20px;
+    }
+}
+
+/* =========================================================
+   HIDE SCROLLBARS
+   ========================================================= */
+
+* {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
